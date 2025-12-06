@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All-in-One Interaction Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      padding: 20px;
+    }
+    .section {
+      background: white;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #333;
+    }
+    button, input[type="button"], input[type="reset"] {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    input[type="text"], select {
+      padding: 8px;
+      font-size: 16px;
+      width: 100%;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    #colorBtn {
+      color: white;
+      background-color: blue;
+    }
+    #message {
+      font-size: 18px;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    table {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Section 1: Arithmetic Operation -->
+  <div class="section">
+    <h2>Arithmetic Calculator</h2>
+    <form>
+      <table>
+        <tr>
+          <td>A:</td>
+          <td><input type="text" id="a" /></td>
+        </tr>
+        <tr>
+          <td>B:</td>
+          <td><input type="text" id="b" /></td>
+        </tr>
+        <tr>
+          <td>Operation:</td>
+          <td>
+            <select id="n">
+              <option value="1">Addition</option>
+              <option value="2">Subtraction</option>
+              <option value="3">Multiplication</option>
+              <option value="4">Division</option>
+              <option value="5">Modulo</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Result:</td>
+          <td><input type="text" id="c" readonly /></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <input type="button" value="Calculate" onclick="ArithOp()" />
+            <input type="reset" value="Reset" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+
+  <!-- Section 2: Greeting Message -->
+  <div class="section">
+    <h2>Time-Based Greeting Message</h2>
+    <button onclick="showGreeting()">Show Greeting</button>
+    <p id="message"></p>
+  </div>
+
+  <!-- Section 3: Color Changing Button -->
+  <div class="section">
+    <h2>Click Button to Change Colors</h2>
+    <button id="colorBtn" onclick="changeButtonColor()">Click Me</button>
+    <p id="colorName"></p>
+  </div>
+
+  <script>
+    // Arithmetic Operation
+    function ArithOp() {
+      const n = parseInt(document.getElementById("n").value);
+      const a = parseFloat(document.getElementById("a").value);
+      const b = parseFloat(document.getElementById("b").value);
+      let c;
+
+      if (isNaN(a) || isNaN(b)) {
+        alert("Please enter valid numbers for A and B");
+        return;
+      }
+
+      switch (n) {
+        case 1: c = a + b; break;
+        case 2: c = a - b; break;
+        case 3: c = a * b; break;
+        case 4: c = b !== 0 ? (a / b) : "Cannot divide by 0"; break;
+        case 5: c = a % b; break;
+        default: c = "Invalid Operation";
+      }
+
+      document.getElementById("c").value = c;
+    }
+
+    // Time-Based Greeting
+    function showGreeting() {
+      const now = new Date();
+      const hour = now.getHours();
+      let greeting = "";
+
+      if (hour >= 5 && hour < 12) {
+        greeting = "Good Morning!";
+      } else if (hour >= 12 && hour < 17) {
+        greeting = "Good Afternoon!";
+      } else if (hour >= 17 && hour < 20) {
+        greeting = "Good Evening!";
+      } else {
+        greeting = "Good Night!";
+      }
+
+      document.getElementById("message").textContent = greeting;
+    }
+
+    // Button Color Changer
+    const colors = ["blue", "green", "orange", "purple", "red", "yellow", "pink"];
+    let currentIndex = 0;
+
+    function changeButtonColor() {
+      const btn = document.getElementById("colorBtn");
+      currentIndex = (currentIndex + 1) % colors.length;
+      btn.style.backgroundColor = colors[currentIndex];
+      btn.style.color = (colors[currentIndex] === "yellow" || colors[currentIndex] === "pink") ? "black" : "white";
+      document.getElementById("colorName").textContent = "Current Color: " + colors[currentIndex];
+    }
+  </script>
+
+</body>
+</html>

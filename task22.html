@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Button Color Cycle</title>
+  <style>
+    #colorBtn {
+      padding: 15px 30px;
+      font-size: 18px;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      background-color: blue;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Click Button to Change  Colors</h2>
+  <button id="colorBtn" onclick="changeButtonColor()">Click Me</button>
+
+  <script>
+    const colors = ["blue", "green", "orange", "purple", "red","yellow","pink"];  // 7 colors
+    let currentIndex = 0;
+
+    function changeButtonColor() {
+      const btn = document.getElementById("colorBtn");
+      currentIndex = (currentIndex + 1) % colors.length;  // Loop 0-4
+      btn.style.backgroundColor = colors[currentIndex];
+    }
+  </script>
+
+</body>
+</html>

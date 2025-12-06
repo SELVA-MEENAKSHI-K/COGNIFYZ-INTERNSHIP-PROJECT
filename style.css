@@ -1,0 +1,111 @@
+body{
+    background: linear-gradient(to left, #99ffcc 0%, #ff99cc 100%);
+}
+.nav {
+    background-color: #006666;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    font-size: 1.1em;
+    font-family: Arial, sans-serif;
+}
+
+.nav a:hover {
+    background-color: #00cccc;
+    color: black;
+    border-radius: 5px;
+}
+
+h2
+{
+
+    color:black ;
+    text-shadow: 2px 2px 5px gold;
+    font-size: 2em;
+    font-family: forte;
+text-align: center;
+text-decoration-line: underline;
+line-height: 10px;
+word-spacing: 5px;
+text-transform: uppercase;
+    text-decoration-style: wavy;
+
+}
+h3{
+        color:black ;
+    text-shadow: 2px 2px 5px gold;
+    font-size: 2em;
+    font-family: forte;
+text-align: center;
+text-decoration-line: underline;
+line-height: 10px;
+word-spacing: 5px;
+text-transform: uppercase;
+    text-decoration-style: wavy;
+}
+.pic
+{
+    float: right;
+    border-style: inset;
+    border-width: 11px;
+    border-color: black;
+}
+.first
+{
+    word-spacing: 12px;
+    text-shadow: 1px 2px #006666;
+    font-style: oblique;
+    text-align: left;
+    text-indent: 100px;
+    font-size: 2em;
+}
+h6{
+    color:black ;
+    text-shadow: 2px 2px 5px gold;
+    font-size: 2em;
+    font-family: forte;
+text-align: center;
+text-decoration-line: underline;
+line-height: 10px;
+word-spacing: 5px;
+text-transform: uppercase;
+    text-decoration-style: wavy;
+}
+.mid
+{
+    word-spacing: 12px;
+    text-shadow: 1px 1px #006666;
+    font-style: oblique;
+    text-align: left;
+    text-indent: 10px;
+    font-size: 2em;
+}
+.re
+{
+    word-spacing: 12px;
+    text-shadow: 1px 1px #006666;
+    font-style: oblique;
+    text-align: left;
+    text-indent: 10px;
+    font-size: 2em;
+}
+.na
+{
+    word-spacing: 12px;
+    text-shadow: 1px 1px #006666;
+    font-style: oblique;
+    text-align: left;
+    text-indent: 10px;
+    font-size: 2em;
+}
+.nav
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
